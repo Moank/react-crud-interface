@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { ListProvider, RecordContext, ListIterator, ListContext } from '../../lib';
+import { ListProvider, useRecord, ListIterator, useList } from '../../lib';
 
 const PostListItem = () => {
-  const post = useContext(RecordContext);
+  const post = useRecord();
 
   if (!post) return null;
 
@@ -12,7 +12,7 @@ const PostListItem = () => {
 }
 
 const PostListSummary = () => {
-  const postList = useContext(ListContext);
+  const postList = useList();
 
   if (!postList) return <h3>Loading posts...</h3>;
 
