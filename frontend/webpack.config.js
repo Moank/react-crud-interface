@@ -24,6 +24,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
+    historyApiFallback: true,
   },
   plugins: [new HtmlWebpackPlugin({ template: path.join(__dirname, './src/index.html') })],
 };
