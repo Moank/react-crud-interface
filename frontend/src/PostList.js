@@ -1,5 +1,10 @@
-import React, { useContext } from 'react';
-import { ListProvider, useRecord, ListIterator, useList } from '../../lib';
+import React from 'react';
+import {
+  ListProvider,
+  useRecord,
+  ListIterator,
+  useList,
+} from '../../lib';
 
 const PostListItem = () => {
   const post = useRecord();
@@ -8,8 +13,8 @@ const PostListItem = () => {
 
   return (
     <li>{post.title}: {post.content}</li>
-  )
-}
+  );
+};
 
 const PostListSummary = () => {
   const postList = useList();
@@ -19,7 +24,7 @@ const PostListSummary = () => {
   return (
     <h3>Found {postList.length} post(s)</h3>
   );
-}
+};
 
 const PostList = () => (
   <ListProvider resource="posts">
