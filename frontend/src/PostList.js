@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   ListProvider,
   useRecord,
@@ -12,7 +13,7 @@ const PostListItem = () => {
   if (!post) return null;
 
   return (
-    <li>{post.title}: {post.content}</li>
+    <li>{post.title}: {post.content}. <Link to={post.id}>Edit</Link></li>
   );
 };
 
