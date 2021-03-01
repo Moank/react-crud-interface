@@ -16,17 +16,17 @@ const postsData = [
     content: 'A little bit more interesting',
     author: 'Bruno',
   },
-]
+];
 
 postsRouter.get('', (req, res) => {
-  res.json(postsData)
+  res.json(postsData);
 });
 
 postsRouter.post('', (req, res) => {
   const id = uuid();
   const newPost = Object.assign(req.body, { id });
   postsData.push(newPost);
-  res.json(newPost)
+  res.json(newPost);
 });
 
 postsRouter.get('/:id', (req, res) => {
